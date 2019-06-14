@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>GuayaGamer</title>
+        <style type="text/css">
+            .evento-container {
+                border: gray solid 1px;
+                border-radius: 3px;
+                margin: 20px 10px;
+                padding: 10px;
+                box-shadow: #c3c3c3 2px 2px 5px 0px;
+            }
+
+            body { font-family: Roboto; }
+
+        </style>
+    </head>
+    <body>
+        
+        <h3>GuayaGamer</h3> 
+
+        <h4>Sala 1</h4>
+        <ul>
+            <li th:each="evento : ${sala1}" style="list-style: none;">
+                <div class="evento-container">
+                    <span th:text="${evento.horaInicio + ' - '+ evento.expositor.nombre + ' - ' + evento.expositor.duracion + 'min'}">Expositor</span>
+                    <!--  <p th:text="${evento.expositor.duracion}">Duracion</p> -->
+                </div>
+            </li>
+        </ul>
+        <h4>Sala 2</h4>        
+        
+        <ul>
+            <li th:each="evento : ${sala2}" style="list-style: none;">
+                <div class="evento-container">
+                    <span th:text="${evento.horaInicio + ' - '+ evento.expositor.nombre + ' - ' + evento.expositor.duracion + 'min'}">Expositor</span>
+                    <!--  <p th:text="${evento.expositor.duracion}">Duracion</p> -->
+                </div>
+            </li>
+        </ul>        
+        
+    </body>
+</html>
